@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+    #複數      符號    打開所有路徑七條路徑
+  resources :candidates
 end
+
+
