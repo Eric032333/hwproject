@@ -1,3 +1,29 @@
 <h1>hi</h1>
+<div>
+<%= flash[:notice] %>
+</div>
+<%# <a href = "/candidates/new">Add Candidates</a> %>
+<%# 上下兩個效果相同 但rails常用link_to %>
+<%# <%= link_to '新增候選人資料' , '/candidates/new' %> 
+<%# 上下兩個效果相同 但rails常用_path  改為這個方法後會報錯 %>
+<%= link_to '新增候選人資料' , new_candidate_path %>
 
-<a href = "/candidates/new">Add Candidates</a>
+<table>
+<tr>
+        <td>Name</td>
+        <td>party</td>
+        <td>age</td>
+        <td>politics</td>
+        <td>Action</td>
+</tr>
+
+<% @candidates.each do |candidate| %>
+    <tr>
+        <td><%= link_to candidate.name , candidate_path(candidate.id) %></a></td>
+        <td><%= candidate.party %></td>
+        <td><%= candidate.age %></td>
+        <td><%= candidate.politics %></td>
+        <td>Action</td>
+    </tr>
+    <% end %>
+</table>
