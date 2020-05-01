@@ -1,0 +1,39 @@
+<h1>Edit</h1>
+
+<% if @candidate.errors.any? %>
+<ul>
+<% @candidate.errors.full_messages.each do |message| %>
+<li><%= message %></li>
+<% end %>
+</ul>
+<% end %>
+
+
+<%# form_for 自動對新的model Candidates.new  生成表格 %>
+<%# <%= form_for(Candidate.new) do  |form| %>
+
+ <%# form表單的Candidate 帶到controller 因為view屬於被動盡量讓controller來做 變數要到erb用需要讓他變成實體變數@ %>
+ <%= form_for(@candidate) do  |form|%>
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div>
+  <%= form.label :party %>
+  <%= form.text_field :party %>
+</div>
+
+<div>
+  <%= form.label :age %>
+  <%= form.text_field :age %>
+</div>
+
+<div>
+  <%= form.label :politics %>
+  <%= form.text_area :politics %>
+</div>
+
+<%= form.submit %>
+
+<% end %>

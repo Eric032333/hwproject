@@ -14,7 +14,7 @@
         <td>party</td>
         <td>age</td>
         <td>politics</td>
-      
+       
 </tr>
 
 <% @candidates.each do |candidate| %>
@@ -23,7 +23,8 @@
         <td><%= candidate.party %></td>
         <td><%= candidate.age %></td>
         <td><%= candidate.politics %></td>
-        <%# <td>Action</td> %>
+        <td><%= link_to '更新' , edit_candidate_path(candidate.id) %></td>
+       
     </tr>
     <% end %>
 </table>
