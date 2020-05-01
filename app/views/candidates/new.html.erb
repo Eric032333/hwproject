@@ -1,6 +1,14 @@
 <h1>Add Candidate</h1>
 
 
+<% if @candidate.errors.any? %>
+<ul>
+<% @candidate.errors.full_messages.each do |message| %>
+<li><%= message %></li>
+<% end %>
+</ul>
+<% end %>
+
 
 <%# form_for 自動對新的model Candidates.new  生成表格 %>
 <%# <%= form_for(Candidate.new) do  |form| %>
