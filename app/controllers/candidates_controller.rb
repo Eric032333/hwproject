@@ -4,6 +4,11 @@ class CandidatesController < ActionController::Base
     @candidates = Candidate.all
 
   end
+
+  def show
+    
+    @Candidate =  Candidate.find_by(id: params[:id])
+  end
   
   def new 
   #  form表單的Candidate 帶到這邊 因為view屬於被動盡量讓controller來做 變數要到erb用需要讓他變成實體變數@
@@ -37,4 +42,5 @@ class CandidatesController < ActionController::Base
 
 
 end
+
 
