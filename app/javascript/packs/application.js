@@ -8,8 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-require("styles")
-require("scripts")
+// require("styles")
+// require("scripts")
 
 
 

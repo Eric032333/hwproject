@@ -1,4 +1,5 @@
-class CandidatesController < ActionController::Base
+class CandidatesController < ApplicationController
+  
   def index 
     # 請SQL撈全部資料出來 因為資料會很多所以我們這邊實體變數給他複數
     @candidates = Candidate.all
@@ -30,7 +31,7 @@ class CandidatesController < ActionController::Base
     end
 
   end
-
+       
   def  edit
     @candidate =  Candidate.find_by(id: params[:id])
   end
@@ -47,9 +48,9 @@ class CandidatesController < ActionController::Base
       end
   end
 
-  def destory
+  def destroy
     @candidate = Candidate.find_by(id: params[:id])
-    @candidate.destory
+    @candidate.destroy
     redirect_to '/candidates'
     flash[:notice]  = "刪除完成"
   end
