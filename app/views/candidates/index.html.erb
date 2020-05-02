@@ -10,21 +10,23 @@
 
 <table>
 <tr>
-        <td>Name</td>
-        <td>party</td>
-        <td>age</td>
-        <td>politics</td>
-       
+  <td>Name</td>
+  <td>party</td>
+  <td>age</td>
+  <td>politics</td>
+  <td>Action</td>
 </tr>
 
 <% @candidates.each do |candidate| %>
-    <tr>
-        <td><%= link_to candidate.name , candidate_path(candidate.id) %></a></td>
-        <td><%= candidate.party %></td>
-        <td><%= candidate.age %></td>
-        <td><%= candidate.politics %></td>
-        <td><%= link_to '更新' , edit_candidate_path(candidate.id) %></td>
-       
-    </tr>
-    <% end %>
-</table>
+  <tr>
+    <td><%= link_to candidate.name, candidate_path(candidate.id) %></a></td>
+    <td><%= candidate.party %></td>
+    <td><%= candidate.age %></td>
+    <td>Action</td>
+    <td>
+      <%= link_to 'update', edit_candidate_path(candidate.id) %>
+      <%= link_to 'delete', candidate_path(candidate.id), method: 'delete', data: {confirm: 'are you sure?!'} %>
+    </td>
+  </tr>
+  <% end %>
+</table> 

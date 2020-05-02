@@ -1,11 +1,11 @@
 <h1>Edit</h1>
 
 <% if @candidate.errors.any? %>
-<ul>
-<% @candidate.errors.full_messages.each do |message| %>
-<li><%= message %></li>
+  <ul>
+    <% @candidate.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
 <% end %>
-</ul>
+  </ul>
 <% end %>
 
 
