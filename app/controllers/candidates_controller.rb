@@ -54,6 +54,19 @@ class CandidatesController < ApplicationController
     redirect_to '/candidates'
     flash[:notice]  = "刪除完成"
   end
+
+
+  def vote
+    @candidate = Candidate.find_by(id: params[:id])
+    
+    # VoteLog.create(candidate: @candidate , ip_address: request.remote_ip)
+    @candidate.vote_logs.create(ip_address: request.remote_ip)
+    
+    # @candidate.votes = @candidate.votes + 1
+    # @candidate.save
+    redirect_to '/candidates'
+    flash[:notice]  = "增加"
+  end
   
   
   private
