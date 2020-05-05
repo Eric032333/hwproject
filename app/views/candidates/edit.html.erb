@@ -12,8 +12,8 @@
 <%# form_for 自動對新的model Candidates.new  生成表格 %>
 <%# <%= form_for(Candidate.new) do  |form| %>
 
- <%# form表單的Candidate 帶到controller 因為view屬於被動盡量讓controller來做 變數要到erb用需要讓他變成實體變數@ %>
- <%= form_for(@candidate) do  |form|%>
+<%# form表單的Candidate 帶到controller 因為view屬於被動盡量讓controller來做 變數要到erb用需要讓他變成實體變數@ %>
+<%= form_for(@candidate) do  |form|%>
 <div>
   <%= form.label :name %>
   <%= form.text_field :name %>
